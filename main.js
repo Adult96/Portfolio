@@ -34,3 +34,12 @@ function scrollIntoView(selector) {
   const name = document.querySelector(selector);
   name.scrollIntoView({ behavior: 'smooth' });
 }
+
+// Home fade out
+const home = document.querySelector('.home__fade-out');
+const homeSize = home.getBoundingClientRect();
+
+document.addEventListener('scroll', () => {
+  const fadeOutPos = 1 - window.scrollY / homeSize.height;
+  home.style.opacity = fadeOutPos;
+});
