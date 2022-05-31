@@ -41,7 +41,7 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   cursor: default;
 }
 
@@ -93,12 +93,21 @@ p {
 
 /* Navbar */
 #navbar {
+  position: fixed;
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: transparent;
   align-items: center;
   color: var(--color-white);
   padding: 16px;
+  width: 100%;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.scrolly {
+  transform: scale(1.01);
+  background-color: var(--color-pink);
+  padding: 8px;
 }
 
 .navbar__menu ul {
@@ -136,6 +145,7 @@ p {
   background: url(/DREAM_CODING/Portfolio/imgs/homebackground-200515-154505.webp)
     center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
@@ -369,7 +379,7 @@ p {
 }
 
 .project__description h3:after {
-  content: "";
+  content: '';
   display: block;
   position: relative;
   left: 50%;
@@ -391,6 +401,7 @@ p {
 }
 
 .testimonials {
+  margin: 20px;
 }
 
 .testimonial {
