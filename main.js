@@ -1,4 +1,6 @@
 'use stric';
+
+// navbar scroll y
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 
@@ -10,6 +12,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
+// navbar menu click
 const navbarMenu = document.querySelector('.navbar__menu');
 
 navbarMenu.addEventListener('click', (event) => {
@@ -19,6 +22,15 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
-  const scrollto = document.querySelector(link);
-  scrollto.scrollIntoView({ behavior: 'smooth' });
+  scrollIntoView(link);
 });
+
+// contact btn
+
+const navbarToggle = document.querySelector('.home__contact');
+navbarToggle.addEventListener('click', () => scrollIntoView('#contact'));
+
+function scrollIntoView(selector) {
+  const name = document.querySelector(selector);
+  name.scrollIntoView({ behavior: 'smooth' });
+}
