@@ -101,7 +101,7 @@ p {
   padding: 16px;
 }
 
-.navbar__menu {
+.navbar__menu ul {
   display: flex;
 }
 .navbar__logo {
@@ -123,6 +123,14 @@ p {
   background-color: var(--color-dark-pink);
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
+}
 /* Home */
 #home {
   background: url(/DREAM_CODING/Portfolio/imgs/homebackground-200515-154505.webp)
@@ -383,7 +391,6 @@ p {
 }
 
 .testimonials {
-  margin: 40px;
 }
 
 .testimonial {
@@ -443,4 +450,46 @@ p {
   transform: scale(1.2);
   color: var(--color-yellow);
   transition: all var(--animation-duration) ease-in;
+}
+
+/* for below 768px screen width */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu,
+  .navbar__menu ul {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .majors {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    /* 스크린의 크기에따라 자동으로 블럭의 사이즈를 맞춤 */
+    flex-grow: 1;
+  }
+
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
