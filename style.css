@@ -464,6 +464,27 @@ p {
   transition: all var(--animation-duration) ease-in;
 }
 
+#arrow__up {
+  color: var(--color-dark-pink);
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: var(--font-large);
+  opacity: 0;
+  visibility: hidden;
+  /*
+  visibility: hidden; 말고
+  pointer-events: none;을써도 된다
+  */
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+#arrow__up.up__to__home {
+  opacity: 1;
+  visibility: visible;
+  /* pointer-events: auto; */
+}
+
 /* for below 768px screen width */
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
