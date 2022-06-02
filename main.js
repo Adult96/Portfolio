@@ -22,26 +22,23 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
+
+  navbarMenu.classList.remove('open');
   scrollIntoView(link);
 });
 
-// const navbarItem = document.querySelectorAll('.navber__menu__item');
-// navbarMenu.addEventListener('click', (event) => {
-//   const target = event.target;
+// toggle btn click
+const navbarMenu_ul_tag = document.querySelector('.navbar__menu ul');
 
-//   if (target.className === 'navbar__menu') {
-//     return;
-//   }
-//   navbarItem.forEach((key) => {
-//     key.classList.remove('active');
-//   });
-//   target.classList.add('active');
-// });
+const navbarToggleMenu = document.querySelector('.navbar__toggle-btn');
+navbarToggleMenu.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
+});
 
 // contact btn click
 
-const navbarToggle = document.querySelector('.home__contact');
-navbarToggle.addEventListener('click', () => scrollIntoView('#contact'));
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => scrollIntoView('#contact'));
 
 // Home fade out
 const home = document.querySelector('.home__fade-out');
@@ -89,6 +86,17 @@ workBtnContainer.addEventListener('click', (e) => {
     projectContainer.classList.remove('animation__out');
   }, 300);
 });
+
+// Remove click selected
+
+// const category__btn = document.getElementsByClassName('category__btn');
+// workBtnContainer.addEventListener('click', (e) => {
+//   const target = e.target;
+//   for (let i = 0; i < category__btn.length; i++) {
+//     category__btn.item(i).classList.remove('active');
+//   }
+//   target.classList.add('active');
+// });
 
 // Function
 

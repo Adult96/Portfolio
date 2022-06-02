@@ -393,7 +393,7 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -401,11 +401,11 @@ p {
   display: block;
   position: relative;
   left: 50%;
-  margin-left: -12.5px;
+  margin-left: -50px;
   margin-top: 8px;
-  width: 25px;
+  width: 100px;
   height: 2px;
-  background-color: var(--color-dark-white);
+  background-color: var(--color-orange);
 }
 
 .project:hover .project__description {
@@ -509,16 +509,27 @@ p {
   }
 
   #navbar {
+    padding: 20px;
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-pink);
   }
 
-  .navbar__menu,
+  #navbar.scrolly {
+    padding: 20px;
+  }
+
+  .navbar__menu {
+    width: 100%;
+    display: none;
+  }
+
   .navbar__menu ul {
     flex-direction: column;
     text-align: center;
-    width: 100%;
-    display: none;
+  }
+  .navbar__menu.open {
+    display: block;
   }
 
   .about__majors {
