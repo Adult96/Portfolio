@@ -25,14 +25,18 @@ navbarMenu.addEventListener('click', (event) => {
   scrollIntoView(link);
 });
 
-const navbarItem = document.querySelectorAll('.navber__menu__item');
-navbarMenu.addEventListener('click', (event) => {
-  const target = event.target;
-  navbarItem.forEach((key, value) => {
-    key.classList.remove('active');
-  });
-  target.classList.add('active');
-});
+// const navbarItem = document.querySelectorAll('.navber__menu__item');
+// navbarMenu.addEventListener('click', (event) => {
+//   const target = event.target;
+
+//   if (target.className === 'navbar__menu') {
+//     return;
+//   }
+//   navbarItem.forEach((key) => {
+//     key.classList.remove('active');
+//   });
+//   target.classList.add('active');
+// });
 
 // contact btn click
 
@@ -66,6 +70,13 @@ workBtnContainer.addEventListener('click', (e) => {
 
   projectContainer.classList.add('animation__out');
 
+  // Remove click selected
+  const selected = document.querySelector('.category__btn.selected');
+  selected.classList.remove('selected');
+  const target =
+    e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  target.classList.add('selected');
+
   setTimeout(() => {
     projects.forEach((project) => {
       if (fillter === 'all' || fillter === project.dataset.type) {
@@ -77,18 +88,6 @@ workBtnContainer.addEventListener('click', (e) => {
 
     projectContainer.classList.remove('animation__out');
   }, 300);
-});
-
-// fillter navbar click active
-const category__btn = document.getElementsByClassName('category__btn');
-const n = document.getElementsByTagName('button');
-console.log(n);
-workBtnContainer.addEventListener('click', (e) => {
-  const target = e.target;
-  for (let i = 0; i < category__btn.length; i++) {
-    category__btn.item(i).classList.remove('active');
-  }
-  target.classList.add('active');
 });
 
 // Function
