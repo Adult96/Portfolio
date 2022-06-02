@@ -205,22 +205,36 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_hea
         <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
-          <button class="category__btn active">
-            ALL<span class="category__count">8</span>
+          <button
+            class="category__btn active"
+            data-category="all"
+            data-fillter="all"
+          >
+            ALL<span class="category__count">7</span>
           </button>
-          <button class="category__btn">
+          <button
+            class="category__btn"
+            data-category="html"
+            data-fillter="html"
+          >
             HTML<span class="category__count">3</span>
           </button>
-          <button class="category__btn">
+          <button class="category__btn" data-category="css" data-fillter="css">
             CSS<span class="category__count">3</span>
           </button>
-          <button class="category__btn">
-            Javascript<span class="category__count">3</span>
+          <button
+            class="category__btn"
+            data-category="javascript"
+            data-fillter="javascript"
+          >
+            Javascript<span class="category__count">1</span>
           </button>
         </div>
 
         <div class="work__projects">
           <a
+            data-type="html"
+            data-work="img1"
             href="https://github.com/Adult96/Portfolio"
             class="project"
             target="_blank"
@@ -237,6 +251,8 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_hea
           </a>
 
           <a
+            data-type="html"
+            data-work="img2"
             href="https://github.com/Adult96/Portfolio"
             class="project"
             target="_blank"
@@ -253,6 +269,8 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_hea
           </a>
 
           <a
+            data-type="html"
+            data-work="img3"
             href="https://github.com/Adult96/Portfolio"
             class="project"
             target="_blank"
@@ -269,6 +287,8 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_hea
           </a>
 
           <a
+            data-type="css"
+            data-work="img4"
             href="https://github.com/Adult96/Portfolio"
             class="project"
             target="_blank"
@@ -284,6 +304,8 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_hea
             </div>
           </a>
           <a
+            data-type="css"
+            data-work="img5"
             href="https://github.com/Adult96/Portfolio"
             class="project"
             target="_blank"
@@ -299,6 +321,8 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_hea
             </div>
           </a>
           <a
+            data-type="css"
+            data-work="img6"
             href="https://github.com/Adult96/Portfolio"
             class="project"
             target="_blank"
@@ -314,6 +338,8 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_hea
             </div>
           </a>
           <a
+            data-type="javascript"
+            data-work="img7 "
             href="https://github.com/Adult96/Portfolio"
             class="project"
             target="_blank"

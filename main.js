@@ -56,6 +56,41 @@ arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+
+// fillter project
+workBtnContainer.addEventListener('click', (e) => {
+  const fillter = e.target.dataset.fillter;
+
+  projectContainer.classList.add('animation__out');
+
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (fillter === 'all' || fillter === project.dataset.type) {
+        project.classList.remove('hiddenProject');
+      } else {
+        project.classList.add('hiddenProject');
+      }
+    });
+
+    projectContainer.classList.remove('animation__out');
+  }, 300);
+});
+
+// fillter navbar click active
+const category__btn = document.getElementsByClassName('category__btn');
+const n = document.getElementsByTagName('button');
+console.log(n);
+workBtnContainer.addEventListener('click', (e) => {
+  const target = e.target;
+  for (let i = 0; i < category__btn.length; i++) {
+    category__btn.item(i).classList.remove('active');
+  }
+  target.classList.add('active');
+});
+
 // Function
 
 function scrollIntoView(selector) {
