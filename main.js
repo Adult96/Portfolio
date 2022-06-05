@@ -63,6 +63,9 @@ const projects = document.querySelectorAll('.project');
 
 // fillter project
 workBtnContainer.addEventListener('click', (e) => {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
   const fillter = e.target.dataset.fillter;
 
   projectContainer.classList.add('animation__out');
@@ -70,10 +73,11 @@ workBtnContainer.addEventListener('click', (e) => {
   // Remove click selected
   const selected = document.querySelector('.category__btn.selected');
   selected.classList.remove('selected');
+
   const target =
     e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
   target.classList.add('selected');
-
+  console.log(e.target);
   setTimeout(() => {
     projects.forEach((project) => {
       if (fillter === 'all' || fillter === project.dataset.type) {
