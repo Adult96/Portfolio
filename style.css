@@ -60,6 +60,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* Typography */
@@ -183,7 +184,8 @@ p {
 
 /* Section Common */
 .section {
-  padding: 50px;
+  padding: 30px;
+  padding-top: 70px;
   text-align: center;
   margin: auto;
 }
@@ -319,11 +321,12 @@ p {
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
-  padding: 8px 10px;
-  width: 150px;
+  padding: 8px 0;
+  width: 160px;
   display: flex;
   justify-content: center;
   margin: 0;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -335,7 +338,7 @@ p {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 5px;
 }
 
 .category__count {
@@ -346,9 +349,9 @@ p {
   height: 24px;
   display: inline-block;
   line-height: 24px;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 12px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
   pointer-events: none;
@@ -523,6 +526,9 @@ p {
   }
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -550,7 +556,7 @@ p {
   }
 
   .section {
-    padding: 16px;
+    padding: 50px;
   }
 
   .about__majors {
@@ -562,10 +568,18 @@ p {
     margin-bottom: 38px;
   }
 
+  #work.section {
+    padding: 50px 0;
+  }
+
   .work__categories {
     flex-flow: row wrap;
     align-items: center;
     margin: 20px 0;
+  }
+
+  .work__projects {
+    padding: 0 50px;
   }
 
   .skillset {
@@ -578,15 +592,31 @@ p {
   }
 
   .testimonial {
+    flex-direction: column;
+    align-items: center;
     margin: 20px 0;
   }
 
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
   }
 
   #arrow__up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
     bottom: 16px;
     right: 16px;
   }
