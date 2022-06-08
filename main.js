@@ -1,10 +1,10 @@
 'use stric';
 
-// navbar fixed scroll y
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
+  // navbar fixed scroll y
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('scrolly');
     arrowUp.classList.add('up__to__home');
@@ -51,7 +51,7 @@ document.addEventListener('scroll', () => {
 
 // up home btn
 
-const arrowUp = document.querySelector('#arrow__up');
+const arrowUp = document.querySelector('.arrow__up');
 
 arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
@@ -77,7 +77,6 @@ workBtnContainer.addEventListener('click', (e) => {
   const target =
     e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
   target.classList.add('selected');
-  console.log(e.target);
   setTimeout(() => {
     projects.forEach((project) => {
       if (fillter === 'all' || fillter === project.dataset.type) {
@@ -91,20 +90,74 @@ workBtnContainer.addEventListener('click', (e) => {
   }, 300);
 });
 
-// Remove click selected
+//1.모든 섹션 요소를 가져온다
+//2.IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
+//3.보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
 
-// const category__btn = document.getElementsByClassName('category__btn');
-// workBtnContainer.addEventListener('click', (e) => {
-//   const target = e.target;
-//   for (let i = 0; i < category__btn.length; i++) {
-//     category__btn.item(i).classList.remove('active');
-//   }
-//   target.classList.add('active');
-// });
+const sectionIds = [
+  '#home',
+  '#about',
+  '#skills',
+  '#work',
+  '#testimonials',
+  '#contact',
+];
 
-// Function
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) =>
+  document.querySelector(`[data-link="${id}"]`)
+);
+console.log(navItems);
+let selectedNavItem = navItems[0];
+let selectedNavIndex = 0;
+
+function selectNavItem(selectedIndex) {
+  selectedNavItem.classList.remove('active');
+  selectedNavItem = selectedIndex;
+  selectedNavItem.classList.add('active');
+}
 
 function scrollIntoView(selector) {
   const name = document.querySelector(selector);
   name.scrollIntoView({ behavior: 'smooth' });
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3,
+};
+
+const bodyBtm = window.scrollbars;
+console.log(bodyBtm);
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+
+      //스크롤링이 아래로 되어서 페이지가 올라옴
+      if (entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        selectedNavIndex = index - 1;
+      }
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach((section) => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (
+    window.scrollY + window.innerHeight ===
+    document.body.clientHeight
+  ) {
+    selectedNavIndex = navItems.length - 1;
+  }
+
+  selectNavItem(navItems[selectedNavIndex]);
+});
