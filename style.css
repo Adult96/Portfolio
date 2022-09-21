@@ -112,7 +112,7 @@ p {
 
 #navbar.scrolly {
   transform: scale(1.01);
-  background-color: var(--color-pink);
+  background-color: var(--color-blue);
   padding: 8px;
 }
 
@@ -136,7 +136,7 @@ p {
 }
 
 .navber__menu__item:hover {
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-white);
   border: 1px solid var(--color-white);
 }
 
@@ -150,7 +150,7 @@ p {
 }
 /* Home */
 #home {
-  background: url(imgs/homebackground.png) center/cover no-repeat;
+  background: url(imgs/backborad.png) center/cover no-repeat;
   padding: 40px;
   padding-top: 120px;
   text-align: center;
@@ -216,7 +216,7 @@ p {
 
 .majors__icon:hover i {
   transform: rotate(10deg) scale(1.1);
-  color: var(--color-pink);
+  color: var(--color-blue);
 }
 
 .majors__icon i {
@@ -331,7 +331,7 @@ p {
 
 .category__btn.selected,
 .category__btn:hover {
-  background-color: var(--color-pink);
+  background-color: var(--color-blue);
   color: var(--color-white);
 }
 
@@ -465,13 +465,13 @@ p {
 }
 
 .testimonial__speech-bubble a {
-  color: var(--color-pink);
+  color: var(--color-blue);
 }
 
 /* Contect */
 
 #contact {
-  background-color: var(--color-pink);
+  background-color: var(--color-blue);
 }
 
 .contact__email,
@@ -495,7 +495,7 @@ p {
 }
 
 .arrow__up {
-  color: var(--color-dark-pink);
+  color: var(--color-white);
   position: fixed;
   bottom: 50px;
   right: 50px;
@@ -535,7 +535,7 @@ p {
     padding: 20px;
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-pink);
+    background-color: var(--color-blue);
   }
 
   #navbar.scrolly {
