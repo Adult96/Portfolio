@@ -10,6 +10,7 @@
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
+  --color-dark-blue: #497da0;
   --color-blue: #73aace;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
@@ -495,7 +496,7 @@ p {
 }
 
 .arrow__up {
-  color: var(--color-light-grey);
+  color: var(--color-dark-blue);
   position: fixed;
   bottom: 50px;
   right: 50px;
