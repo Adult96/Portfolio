@@ -495,7 +495,7 @@ p {
 }
 
 .arrow__up {
-  color: var(--color-white);
+  color: var(--color-light-grey);
   position: fixed;
   bottom: 50px;
   right: 50px;
